@@ -30,7 +30,7 @@ class App extends Component {
 				{this.state.todos.map(item => (
 					<div key={item.id}>
 						<h1>{item.title}</h1>
-						<span>{item.body}</span>
+						<span>{item.content}</span>
 					</div>
 				))}
 			</div>
