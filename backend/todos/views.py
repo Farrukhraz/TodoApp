@@ -4,7 +4,7 @@ from .models import Ticket
 from .serializers import TicketSerializer
 
 
-class ListTodo(generics.ListAPIView):
+class ListTodo(generics.ListCreateAPIView):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
 
