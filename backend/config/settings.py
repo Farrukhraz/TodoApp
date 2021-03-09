@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # Local
     'todos.apps.TodosConfig',
+    'authors.apps.AuthorsConfig',
 
     # 3rd party
     'rest_framework',
@@ -45,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -63,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
