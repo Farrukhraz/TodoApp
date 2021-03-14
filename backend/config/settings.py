@@ -1,3 +1,7 @@
+import sentry_sdk
+
+from sentry_sdk.integrations.django import DjangoIntegration
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,6 +33,8 @@ INSTALLED_APPS = [
     # Local
     'todos.apps.TodosConfig',
     'authors.apps.AuthorsConfig',
+    'users.apps.UsersConfig',
+    'developers.apps.DevelopersConfig',
 
     # 3rd party
     'rest_framework',
@@ -130,3 +136,19 @@ CORS_ORIGIN_WHITELIST = (
 # auth
 # root
 # Qwerty123
+
+# sentry
+
+sentry_sdk.init(
+    dsn="https://83a8f4d31c0e4015bb7c6fbe9657cdcf@o550904.ingest.sentry.io/5674353",
+    integrations=[DjangoIntegration()],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)

@@ -12,11 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Ticket',
+            name='User',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=52)),
-                ('content', models.TextField(blank=True)),
+                ('first_name', models.CharField(max_length=32, verbose_name='First name')),
+                ('last_name', models.CharField(max_length=32, verbose_name='Last name')),
+                ('birth_date', models.DateField(verbose_name='Birth date')),
             ],
         ),
     ]
