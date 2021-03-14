@@ -9,8 +9,8 @@ from developers.models import Developer
 class Ticket(models.Model):
     title = models.CharField(max_length=52)
     content = models.TextField(blank=True)
-    authors = models.ManyToManyField(Author)
-    developers = models.ManyToManyField(Developer)
+    authors = models.ManyToManyField(Author, verbose_name='tickets')
+    developers = models.ManyToManyField(Developer, verbose_name='tickets')
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 

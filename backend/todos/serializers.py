@@ -4,7 +4,7 @@ from .models import Ticket
 
 
 class TicketSerializer(serializers.ModelSerializer):
-    serializers.StringRelatedField(many=True)
+    project_tickets = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Ticket

@@ -9,6 +9,7 @@ class Author(models.Model):
         User,
         on_delete=models.CASCADE,
         primary_key=True,
+        related_name="author",
     )
 
     def __str__(self):

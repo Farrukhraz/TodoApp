@@ -4,7 +4,7 @@ from .models import Developer
 
 
 class DeveloperSerializer(serializers.ModelSerializer):
-    serializers.StringRelatedField(many=True)
+    user = serializers.StringRelatedField()
 
     class Meta:
         model = Developer

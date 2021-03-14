@@ -4,7 +4,7 @@ from .models import Author
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    serializers.StringRelatedField(many=True)
+    user = serializers.StringRelatedField()
 
     class Meta:
         model = Author

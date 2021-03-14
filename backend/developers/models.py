@@ -8,6 +8,7 @@ class Developer(models.Model):
         User,
         on_delete=models.CASCADE,
         primary_key=True,
+        related_name="developer",
     )
     grade = models.CharField(verbose_name="Grade", max_length=32, default='Unknown')
     level = models.CharField(verbose_name="Level", max_length=32, default='Junior')
