@@ -12,5 +12,5 @@ class Author(models.Model):
     )
 
     def __str__(self):
-        return f"Author: {User.first_name} {User.last_name}."
+        return f"Author: {self.user.__str__()}"
 

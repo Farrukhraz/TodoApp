@@ -13,6 +13,6 @@ class Developer(models.Model):
     level = models.CharField(verbose_name="Level", max_length=32, default='Junior')
 
     def __str__(self):
-        return f"Developer: {User.first_name} {User.last_name}."
+        return f"Developer: {self.user.__str__()}."
 
 

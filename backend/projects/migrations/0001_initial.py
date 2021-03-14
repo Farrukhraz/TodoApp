@@ -8,21 +8,25 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('authors', '0001_initial'),
         ('developers', '0001_initial'),
+        ('todos', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Ticket',
+            name='Project',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=52)),
-                ('content', models.TextField(blank=True)),
+                ('name', models.CharField(max_length=64, verbose_name='name')),
+                ('description', models.TextField(blank=True)),
+                ('repo_url', models.URLField(blank=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('modified_at', models.DateTimeField(auto_now=True)),
-                ('authors', models.ManyToManyField(to='authors.Author')),
+                ('modified', models.DateTimeField(auto_now=True)),
                 ('developers', models.ManyToManyField(to='developers.Developer')),
+                ('tickets', models.ManyToManyField(to='todos.Ticket')),
             ],
+            options={
+                'ordering': ['name'],
+            },
         ),
     ]

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'authors.apps.AuthorsConfig',
     'users.apps.UsersConfig',
     'developers.apps.DevelopersConfig',
+    'projects.apps.ProjectsConfig',
 
     # 3rd party
     'rest_framework',
