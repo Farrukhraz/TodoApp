@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from .models import Author
+from .models import Developer
 
 
-class AuthorSerializer(serializers.ModelSerializer):
+class DeveloperSerializer(serializers.ModelSerializer):
     serializers.StringRelatedField(many=True)
 
     class Meta:
-        model = Author
+        model = Developer
         fields = '__all__'

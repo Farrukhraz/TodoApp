@@ -4,7 +4,8 @@ from .models import Ticket
 
 
 class TicketSerializer(serializers.ModelSerializer):
+    serializers.StringRelatedField(many=True)
+
     class Meta:
         model = Ticket
-        fields = ('title', 'content', )
-
+        fields = '__all__'
